@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="39" Path="/home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.xpr">
+<Project Version="7" Minor="39" Path="/home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="dcfb61e07ebc44c9a6f73a293a052def"/>

@@ -114,13 +114,13 @@ input               cmos1_pclk     ,
 input               cmos1_vsync    ,
 input               cmos1_href     ,
 output              cmos1_rst_n    ,
-input        [9:0]  cmos1_data     ,
+input        [9:0]  cmos1_data     //,
 
-input               cmos2_pclk     ,
-input               cmos2_vsync    ,
-input               cmos2_href     ,
-output              cmos2_rst_n    ,
-input        [9:0]  cmos2_data     
+//input               cmos2_pclk     ,
+//input               cmos2_vsync    ,
+//input               cmos2_href     ,
+//output              cmos2_rst_n    ,
+//input        [9:0]  cmos2_data     
 );
 
 //localparam nCK_PER_CLK              = 4;
@@ -513,7 +513,7 @@ hdmi_i2c_cfg  inst_hdmi_i2c_cfg
 ); 
 
 assign cmos1_rst_n = 1'b1;
-assign cmos2_rst_n = 1'b1;
+//assign cmos2_rst_n = 1'b1;
 
 wire            cmos1_cfg_done         ;
 wire            cmos2_cfg_done         ;
@@ -526,13 +526,13 @@ cmos_cfg inst1_cmos_cfg (
     .sda      (cmos1_sda)
 );
 
-cmos_cfg inst2_cmos_cfg (
-    .clk      (clk_50MHz),
-    .rst      (~rst_n),
-    .scl      (cmos2_scl),
-    .cfg_done (cmos2_cfg_done),
-    .sda      (cmos2_sda)
-);
+//cmos_cfg inst2_cmos_cfg (
+//    .clk      (clk_50MHz),
+//    .rst      (~rst_n),
+//    .scl      (cmos2_scl),
+//    .cfg_done (cmos2_cfg_done),
+//    .sda      (cmos2_sda)
+//);
 
 wire                    hs1;
 wire                    hs2;
@@ -557,21 +557,21 @@ cmos_img_capture u1_cmos_img_capture
     .cmos_data_vld     (de1)
 );
 
-cmos_img_capture u2_cmos_img_capture
-(
-    .rst               (~rst_n),//复位信号
-    .cmos_cfg_done     (cmos2_cfg_done),//寄存器配置完成信号 
+//cmos_img_capture u2_cmos_img_capture
+//(
+//    .rst               (~rst_n),//复位信号
+//    .cmos_cfg_done     (cmos2_cfg_done),//寄存器配置完成信号 
 
-    .cmos_pclk         (cmos2_pclk),//cmos 数据像素时钟
-    .cmos_vsync        (cmos2_vsync),//cmos 场同步信号
-    .cmos_href         (cmos2_href),//cmos 行同步信号
-    .cmos_data         (cmos2_data[9:2]),//cmos 数据
+//    .cmos_pclk         (cmos2_pclk),//cmos 数据像素时钟
+//    .cmos_vsync        (cmos2_vsync),//cmos 场同步信号
+//    .cmos_href         (cmos2_href),//cmos 行同步信号
+//    .cmos_data         (cmos2_data[9:2]),//cmos 数据
 
-    .cmos_hsync_d1     (hs2),
-    .cmos_vsync_d1     (vs2),
-    .cmos_data_wr      (ch1_write_data_r),
-    .cmos_data_vld     (de2)
-);
+//    .cmos_hsync_d1     (hs2),
+//    .cmos_vsync_d1     (vs2),
+//    .cmos_data_wr      (ch1_write_data_r),
+//    .cmos_data_vld     (de2)
+//);
 
 video_rect_write_data
 #(
@@ -601,33 +601,33 @@ video_rect_write_data_m0
 .vout_data                      (ch0_write_data)           // video data
 );
 
-video_rect_write_data
-#(
-.DATA_WIDTH     ('d32)
-)
-video_rect_write_data_m1
-(
-.video_clk                      (cmos2_pclk),          // Video pixel clock
-.rst                            (~rst_n),
-.video_left_offset              ('d150),
-.video_top_offset               ('d100),
-.video_width                    ('d400),
-.video_height                   ('d400),
-.write_req                      (ch1_write_req),           // Start reading a frame of data     
-.write_req_ack                  (ch1_write_req_ack),       // Read request response
-.write_addr_index               (ch1_write_addr_index),
-.read_addr_index                (ch1_read_addr_index),
-.write_en                       (ch1_write_en),            // Read data enable
-//.write_data                     (write_data),          // Read data
-.timing_hs                      (hs2),    
-.timing_vs                      (vs2),    
-.timing_de                      (de2),    
-.timing_data                    (ch1_write_data_r), 
-.hs                             (),                 // horizontal synchronization
-.vs                             (),                 // vertical synchronization
-.de                             (),                 // video valid
-.vout_data                      (ch1_write_data)           // video data
-);
+//video_rect_write_data
+//#(
+//.DATA_WIDTH     ('d32)
+//)
+//video_rect_write_data_m1
+//(
+//.video_clk                      (cmos2_pclk),          // Video pixel clock
+//.rst                            (~rst_n),
+//.video_left_offset              ('d150),
+//.video_top_offset               ('d100),
+//.video_width                    ('d400),
+//.video_height                   ('d400),
+//.write_req                      (ch1_write_req),           // Start reading a frame of data     
+//.write_req_ack                  (ch1_write_req_ack),       // Read request response
+//.write_addr_index               (ch1_write_addr_index),
+//.read_addr_index                (ch1_read_addr_index),
+//.write_en                       (ch1_write_en),            // Read data enable
+////.write_data                     (write_data),          // Read data
+//.timing_hs                      (hs2),    
+//.timing_vs                      (vs2),    
+//.timing_de                      (de2),    
+//.timing_data                    (ch1_write_data_r), 
+//.hs                             (),                 // horizontal synchronization
+//.vs                             (),                 // vertical synchronization
+//.de                             (),                 // video valid
+//.vout_data                      (ch1_write_data)           // video data
+//);
 
 /*************************************************************************
 write bus arbitration
@@ -650,12 +650,12 @@ mem_write_arbi_m0
 .ch0_wr_burst_data              (ch0_wr_burst_data        ),
 .ch0_wr_burst_finish            (ch0_wr_burst_finish      ),
 
-.ch1_wr_burst_req               (ch1_wr_burst_req         ),
-.ch1_wr_burst_len               (ch1_wr_burst_len         ),
-.ch1_wr_burst_addr              (ch1_wr_burst_addr        ),
-.ch1_wr_burst_data_req          (ch1_wr_burst_data_req    ),
-.ch1_wr_burst_data              (ch1_wr_burst_data        ),
-.ch1_wr_burst_finish            (ch1_wr_burst_finish      ),
+//.ch1_wr_burst_req               (ch1_wr_burst_req         ),
+//.ch1_wr_burst_len               (ch1_wr_burst_len         ),
+//.ch1_wr_burst_addr              (ch1_wr_burst_addr        ),
+//.ch1_wr_burst_data_req          (ch1_wr_burst_data_req    ),
+//.ch1_wr_burst_data              (ch1_wr_burst_data        ),
+//.ch1_wr_burst_finish            (ch1_wr_burst_finish      ),
 
 .wr_burst_req                   (wr_burst_req             ),
 .wr_burst_len                   (wr_burst_len             ),
@@ -927,15 +927,22 @@ frame_read frame_read_m1
 .read_req                       (ch1_read_req                  ),
 .read_req_ack                   (ch1_read_req_ack              ),
 .read_finish                    (                          ),
-.read_addr_0                    (26'd8294400*4                     ), //The first frame address is 0
-.read_addr_1                    (26'd8294400*5               ), //The second frame address is 24'd2073600 ,large enough address space for one frame of video
-.read_addr_2                    (26'd8294400*6             ),
-.read_addr_3                    (26'd8294400*7             ),
+//.read_addr_0                    (26'd8294400*4                     ), //The first frame address is 0
+//.read_addr_1                    (26'd8294400*5               ), //The second frame address is 24'd2073600 ,large enough address space for one frame of video
+//.read_addr_2                    (26'd8294400*6             ),
+//.read_addr_3                    (26'd8294400*7             ),
+
+.read_addr_0                    (26'd0                     ), //The first frame address is 0
+.read_addr_1                    (26'd8294400               ), //The second frame address is 24'd2073600 ,large enough address space for one frame of video
+.read_addr_2                    (26'd8294400*2             ),
+.read_addr_3                    (26'd8294400*3             ),
 //.read_addr_0                    (24'd0                     ), //The first frame address is 0
 //.read_addr_1                    (24'd2073600               ),
 //.read_addr_2                    (24'd4147200               ),
 //.read_addr_3                    (24'd6220800               ),
-.read_addr_index                (ch1_read_addr_index           ),
+//.read_addr_index                (ch1_read_addr_index           ),
+.read_addr_index                (ch0_read_addr_index           ),
+
 //.read_len                       (24'd196608                ),//frame size 1024 * 768 * 16 / 64
 //.read_len                       (24'd393216                ),//frame size 1024 * 768 * 32 / 64
 //.read_len                       (26'd518400                ),//frame size 1920 * 1080 * 16 / 64
@@ -974,35 +981,35 @@ frame_write frame_write_m0
 .write_data                     (ch0_write_data                )
 );
 
-frame_write frame_write_m1
-(
-.rst                            (~rst_n                    ),
-.mem_clk                        (ui_clk                    ),
-.wr_burst_req                   (ch1_wr_burst_req              ),
-.wr_burst_len                   (ch1_wr_burst_len              ),
-.wr_burst_addr                  (ch1_wr_burst_addr             ),
-.wr_burst_data_req              (ch1_wr_burst_data_req         ),
-.wr_burst_data                  (ch1_wr_burst_data             ),
-.wr_burst_finish                (ch1_wr_burst_finish           ),
-.write_clk                      (cmos2_pclk                 ),
-.write_req                      (ch1_write_req                 ),
-.write_req_ack                  (ch1_write_req_ack             ),
-.write_finish                   (                          ),
-//.write_addr_0                   (24'd0                     ),
-//.write_addr_1                   (24'd2073600               ),
-//.write_addr_2                   (24'd4147200               ),
-//.write_addr_3                   (24'd6220800               ),
-.write_addr_0                   (26'd8294400*4                     ),
-.write_addr_1                   (26'd8294400*5             ),
-.write_addr_2                   (26'd8294400*6             ),
-.write_addr_3                   (26'd8294400*7             ),
-.write_addr_index               (ch1_write_addr_index          ),
-//.write_len                      (24'd196608                ),//frame size 1024 * 768 * 16 / 64
-//.write_len                      (24'd393216                ),//frame size 1024 * 768 * 32 / 64
-.write_len                      (26'd40000                ),//frame size 400 * 400 * 32 / 128
-.write_en                       (ch1_write_en                  ),
-.write_data                     (ch1_write_data                )
-);
+//frame_write frame_write_m1
+//(
+//.rst                            (~rst_n                    ),
+//.mem_clk                        (ui_clk                    ),
+//.wr_burst_req                   (ch1_wr_burst_req              ),
+//.wr_burst_len                   (ch1_wr_burst_len              ),
+//.wr_burst_addr                  (ch1_wr_burst_addr             ),
+//.wr_burst_data_req              (ch1_wr_burst_data_req         ),
+//.wr_burst_data                  (ch1_wr_burst_data             ),
+//.wr_burst_finish                (ch1_wr_burst_finish           ),
+//.write_clk                      (cmos2_pclk                 ),
+//.write_req                      (ch1_write_req                 ),
+//.write_req_ack                  (ch1_write_req_ack             ),
+//.write_finish                   (                          ),
+////.write_addr_0                   (24'd0                     ),
+////.write_addr_1                   (24'd2073600               ),
+////.write_addr_2                   (24'd4147200               ),
+////.write_addr_3                   (24'd6220800               ),
+//.write_addr_0                   (26'd8294400*4                     ),
+//.write_addr_1                   (26'd8294400*5             ),
+//.write_addr_2                   (26'd8294400*6             ),
+//.write_addr_3                   (26'd8294400*7             ),
+//.write_addr_index               (ch1_write_addr_index          ),
+////.write_len                      (24'd196608                ),//frame size 1024 * 768 * 16 / 64
+////.write_len                      (24'd393216                ),//frame size 1024 * 768 * 32 / 64
+//.write_len                      (26'd40000                ),//frame size 400 * 400 * 32 / 128
+//.write_en                       (ch1_write_en                  ),
+//.write_data                     (ch1_write_data                )
+//);
 
 
 

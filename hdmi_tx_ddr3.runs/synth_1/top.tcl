@@ -17,6 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
 set_param simulator.modelsimInstallPath /opt/modelsim/modeltech/linux_x86_64
 create_project -in_memory -part xc7a35tfgg484-2
 
@@ -24,50 +25,50 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.cache/wt [current_project]
-set_property parent.project_path /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.xpr [current_project]
+set_property webtalk.parent_dir /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.cache/wt [current_project]
+set_property parent.project_path /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.cache/ip [current_project]
+set_property ip_output_repo /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/new/cmos_cfg.v
-  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/new/cmos_img_capture.v
-  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/new/frame_fifo_read.v
-  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/new/frame_fifo_write.v
-  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/new/frame_read.v
-  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/new/frame_write.v
-  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/new/hdmi_i2c_cfg.v
-  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/new/i2c_driver.v
-  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/new/mem_burst.v
-  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/new/mem_read_arbi.v
-  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/new/mem_write_arbi.v
-  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/new/sccb_driver.v
-  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/new/timing_gen.v
-  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/new/timing_gen_xy.v
-  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/new/video_rect_read_data.v
-  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/new/video_rect_write_data.v
-  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/new/top.v
+  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/new/cmos_cfg.v
+  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/new/cmos_img_capture.v
+  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/new/frame_fifo_read.v
+  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/new/frame_fifo_write.v
+  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/new/frame_read.v
+  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/new/frame_write.v
+  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/new/hdmi_i2c_cfg.v
+  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/new/i2c_driver.v
+  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/new/mem_burst.v
+  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/new/mem_read_arbi.v
+  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/new/mem_write_arbi.v
+  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/new/sccb_driver.v
+  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/new/timing_gen.v
+  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/new/timing_gen_xy.v
+  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/new/video_rect_read_data.v
+  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/new/video_rect_write_data.v
+  /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/new/top.v
 }
-read_ip -quiet /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/ip/afifo_32i_128o_2048/afifo_32i_128o_2048.xci
-set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/ip/afifo_32i_128o_2048/afifo_32i_128o_2048.xdc]
-set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/ip/afifo_32i_128o_2048/afifo_32i_128o_2048_clocks.xdc]
-set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/ip/afifo_32i_128o_2048/afifo_32i_128o_2048_ooc.xdc]
+read_ip -quiet /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/ip/afifo_32i_128o_2048/afifo_32i_128o_2048.xci
+set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/ip/afifo_32i_128o_2048/afifo_32i_128o_2048.xdc]
+set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/ip/afifo_32i_128o_2048/afifo_32i_128o_2048_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/ip/afifo_32i_128o_2048/afifo_32i_128o_2048_ooc.xdc]
 
-read_ip -quiet /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/ip/afifo_128i_32o_512/afifo_128i_32o_512.xci
-set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/ip/afifo_128i_32o_512/afifo_128i_32o_512.xdc]
-set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/ip/afifo_128i_32o_512/afifo_128i_32o_512_clocks.xdc]
-set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/ip/afifo_128i_32o_512/afifo_128i_32o_512_ooc.xdc]
+read_ip -quiet /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/ip/afifo_128i_32o_512/afifo_128i_32o_512.xci
+set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/ip/afifo_128i_32o_512/afifo_128i_32o_512.xdc]
+set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/ip/afifo_128i_32o_512/afifo_128i_32o_512_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/ip/afifo_128i_32o_512/afifo_128i_32o_512_ooc.xdc]
 
-read_ip -quiet /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/ip/ddr3/ddr3.xci
-set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/ip/ddr3/ddr3/user_design/constraints/ddr3.xdc]
-set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/ip/ddr3/ddr3/user_design/constraints/ddr3_ooc.xdc]
+read_ip -quiet /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/ip/ddr3/ddr3.xci
+set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/ip/ddr3/ddr3/user_design/constraints/ddr3.xdc]
+set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/ip/ddr3/ddr3/user_design/constraints/ddr3_ooc.xdc]
 
-read_ip -quiet /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/ip/cfg_clock/cfg_clock.xci
-set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/ip/cfg_clock/cfg_clock_board.xdc]
-set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/ip/cfg_clock/cfg_clock.xdc]
-set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/ip/cfg_clock/cfg_clock_ooc.xdc]
+read_ip -quiet /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/ip/cfg_clock/cfg_clock.xci
+set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/ip/cfg_clock/cfg_clock_board.xdc]
+set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/ip/cfg_clock/cfg_clock.xdc]
+set_property used_in_implementation false [get_files -all /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/ip/cfg_clock/cfg_clock_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -77,8 +78,8 @@ set_property used_in_implementation false [get_files -all /home/andy/workdir/hdm
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/constrs_1/new/hdmi_tx_ddr3.xdc
-set_property used_in_implementation false [get_files /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/constrs_1/new/hdmi_tx_ddr3.xdc]
+read_xdc /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/constrs_1/new/hdmi_tx_ddr3.xdc
+set_property used_in_implementation false [get_files /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/constrs_1/new/hdmi_tx_ddr3.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

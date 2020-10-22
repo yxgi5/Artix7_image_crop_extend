@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="video_pll_synth_1" LaunchPart="xc7a35tfgg484-2" LaunchTime="1601984266">
-  <File Type="RDS-UTIL-PB" Name="video_pll_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="video_pll_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="video_pll_utilization_synth.pb"/>
   <File Type="RDS-RDS" Name="video_pll.vds"/>
   <File Type="RDS-DCP" Name="video_pll.dcp"/>
   <File Type="PA-TCL" Name="video_pll.tcl"/>

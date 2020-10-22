@@ -65,21 +65,22 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  set_param xicom.use_bs_reader 1
   set_param simulator.modelsimInstallPath /opt/modelsim/modeltech/linux_x86_64
   create_project -in_memory -part xc7a35tfgg484-2
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.cache/wt [current_project]
-  set_property parent.project_path /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.xpr [current_project]
-  set_property ip_output_repo /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.cache/ip [current_project]
+  set_property webtalk.parent_dir /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.cache/wt [current_project]
+  set_property parent.project_path /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.xpr [current_project]
+  set_property ip_output_repo /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.runs/synth_1/top.dcp
-  read_ip -quiet /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/ip/afifo_32i_128o_2048/afifo_32i_128o_2048.xci
-  read_ip -quiet /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/ip/afifo_128i_32o_512/afifo_128i_32o_512.xci
-  read_ip -quiet /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/ip/ddr3/ddr3.xci
-  read_ip -quiet /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/sources_1/ip/cfg_clock/cfg_clock.xci
-  read_xdc /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.srcs/constrs_1/new/hdmi_tx_ddr3.xdc
+  add_files -quiet /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.runs/synth_1/top.dcp
+  read_ip -quiet /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/ip/afifo_32i_128o_2048/afifo_32i_128o_2048.xci
+  read_ip -quiet /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/ip/afifo_128i_32o_512/afifo_128i_32o_512.xci
+  read_ip -quiet /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/ip/ddr3/ddr3.xci
+  read_ip -quiet /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/sources_1/ip/cfg_clock/cfg_clock.xci
+  read_xdc /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.srcs/constrs_1/new/hdmi_tx_ddr3.xdc
   link_design -top top -part xc7a35tfgg484-2
   close_msg_db -file init_design.pb
 } RESULT]

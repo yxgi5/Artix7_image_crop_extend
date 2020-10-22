@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.runs/synth_1'
+HD_PWD='/home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_ov5640_1024_768_dual_crop_400_400/hdmi_tx_ddr3.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

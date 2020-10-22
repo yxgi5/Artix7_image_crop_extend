@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="afifo_32i_64o_2048_synth_1" LaunchPart="xc7a35tfgg484-2" LaunchTime="1602002349">
-  <File Type="RDS-UTIL" Name="afifo_32i_64o_2048_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="afifo_32i_64o_2048_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="afifo_32i_64o_2048_utilization_synth.rpt"/>
   <File Type="RDS-RDS" Name="afifo_32i_64o_2048.vds"/>
   <File Type="RDS-DCP" Name="afifo_32i_64o_2048.dcp"/>
   <File Type="PA-TCL" Name="afifo_32i_64o_2048.tcl"/>

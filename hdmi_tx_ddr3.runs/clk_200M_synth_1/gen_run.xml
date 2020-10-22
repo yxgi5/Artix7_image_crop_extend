@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="clk_200M_synth_1" LaunchPart="xc7a35tfgg484-2" LaunchTime="1601983983">
-  <File Type="RDS-UTIL-PB" Name="clk_200M_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="clk_200M_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="clk_200M_utilization_synth.pb"/>
   <File Type="RDS-RDS" Name="clk_200M.vds"/>
   <File Type="RDS-DCP" Name="clk_200M.dcp"/>
   <File Type="PA-TCL" Name="clk_200M.tcl"/>
