@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Oct 15 13:28:49 2020
+# Process ID: 10968
+# Current directory: /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.runs/ddr3_synth_1
+# Command line: vivado -log ddr3.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ddr3.tcl
+# Log file: /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.runs/ddr3_synth_1/ddr3.vds
+# Journal file: /home/andy/workdir/hdmi_tx_ddr3_1pcs_1920_1080_dual_ov5640_640_480_32bit_128burst/hdmi_tx_ddr3.runs/ddr3_synth_1/vivado.jou
+#-----------------------------------------------------------
+source ddr3.tcl -notrace

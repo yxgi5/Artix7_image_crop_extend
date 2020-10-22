@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Oct  6 19:33:05 2020
+# Process ID: 11260
+# Current directory: /home/andy/workdir/ddr3_an5642_hdmi_sobel_2018/ddr3_an5642_hdmi_sobel.runs/clk_200M_synth_1
+# Command line: vivado -log clk_200M.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_200M.tcl
+# Log file: /home/andy/workdir/ddr3_an5642_hdmi_sobel_2018/ddr3_an5642_hdmi_sobel.runs/clk_200M_synth_1/clk_200M.vds
+# Journal file: /home/andy/workdir/ddr3_an5642_hdmi_sobel_2018/ddr3_an5642_hdmi_sobel.runs/clk_200M_synth_1/vivado.jou
+#-----------------------------------------------------------
+source clk_200M.tcl -notrace

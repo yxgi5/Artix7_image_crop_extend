@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="afifo_32i_128o_2048_synth_1" LaunchDir="/home/andy/workdir/hdmi_tx_ddr3/hdmi_tx_ddr3.runs/afifo_32i_128o_2048_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+
